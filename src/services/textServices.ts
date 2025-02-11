@@ -14,3 +14,39 @@ export const createText = async(content: string) => {
     }
 
 }
+
+export const getAllTexts = async () => {
+    try {
+        return await db('text_entries').select('*');
+    } catch (error: any) {
+        console.log(error);
+        throw new Error (error.message)
+    }
+}
+
+export const getTextById = async (id: number) => {
+    try {
+        return await db('text_entries').where({id}).first();
+    } catch (error: any) {
+        console.log(error);
+        throw new Error (error.message)
+    }
+}
+
+export const deleteTextById = async (id: number) => {
+    try {
+        return await db('text_entries').where({id}).del();
+    } catch (error: any) {
+        console.log(error);
+        throw new Error (error.message)
+    }
+}   
+
+export const updateTextById = async (id: number, content: string) => {
+    try {
+        return await db('text_entries').where({id}).update({content});
+    } catch (error: any) {
+        console.log(error);
+        throw new Error (error.message)
+    }
+}
