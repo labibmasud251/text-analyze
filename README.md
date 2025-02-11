@@ -13,6 +13,7 @@ A RESTful API service that analyzes text content, providing statistics like word
 1. Clone the repository:
 
 git clone https://github.com/labibmasud251/text-analyze
+
 cd text-analyze
 
 2. Install dependencies:
@@ -31,7 +32,7 @@ DB_NAME=text_analyzer
 
 4. Set up the database:
 
-CREATE DATABASE = text_analyzer
+CREATE DATABASE text_analyzer
 
 ```bash
 # Run migrations
