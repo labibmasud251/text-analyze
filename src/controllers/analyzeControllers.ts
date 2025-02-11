@@ -11,7 +11,7 @@ const getWordCount = async (req: Request, res:Response) : Promise<any> => {
             return res.status(400).json({ error: "Invalid ID format" });
         }
         const text = await TextServices.getTextById(textId);
-        const wordCount = await AnalyzeService.countWords(text);
+        const wordCount = await AnalyzeService.countWords(text.content);
         return res.status(200).json({ wordCount });
     }
     catch(error) {
@@ -29,7 +29,7 @@ const getCharacterCount = async (req: Request, res:Response) : Promise<any> => {
             return res.status(400).json({ error: "Invalid ID format" });
         }
         const text = await TextServices.getTextById(textId);
-        const characterCount = await AnalyzeService.countCharacters(text);
+        const characterCount = await AnalyzeService.countCharacters(text.content);
         return res.status(200).json({ characterCount });
     }
     catch(error) {
@@ -46,7 +46,7 @@ const getSentenceCount = async (req: Request, res:Response) : Promise<any> => {
             return res.status(400).json({ error: "Invalid ID format" });
         }
         const text = await TextServices.getTextById(textId);
-        const sentenceCount = await AnalyzeService.countSentences(text);
+        const sentenceCount = await AnalyzeService.countSentences(text.content);
         return res.status(200).json({ sentenceCount });
     }
     catch(error) {
@@ -63,7 +63,7 @@ const getParagraphCount = async (req: Request, res:Response) : Promise<any> => {
             return res.status(400).json({ error: "Invalid ID format" });
         }
         const text = await TextServices.getTextById(textId);
-        const paragraphCount = await AnalyzeService.countParagraphs(text);
+        const paragraphCount = await AnalyzeService.countParagraphs(text.content);
         return res.status(200).json({ paragraphCount });
     }
     catch(error) {
@@ -80,7 +80,7 @@ const getLongestWordsInParagraphs = async (req: Request, res:Response) : Promise
             return res.status(400).json({ error: "Invalid ID format" });
         }
         const text = await TextServices.getTextById(textId);
-        const longestWords = await AnalyzeService.longestWordsInParagraphs(text);
+        const longestWords = await AnalyzeService.longestWordsInParagraphs(text.content);
         return res.status(200).json({ longestWords });
     }
     catch(error) {

@@ -29,7 +29,7 @@ export const getTextById = async (req: Request, res: Response): Promise<any> => 
     try {
         const { id } = req.params;
         const textId = parseInt(id, 10);
-
+        
         if (isNaN(textId)) {
             return res.status(400).json({ error: "Invalid ID format" });
         }
