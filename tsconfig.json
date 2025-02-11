@@ -10,6 +10,6 @@
     "skipLibCheck": true,
     "moduleResolution": "node16"
   }, 
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "migrations", "knexfile.ts",],
   "exclude": ["node_modules", "dist"]
 }

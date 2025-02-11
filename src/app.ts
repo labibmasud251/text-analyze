@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import textRoutes from "./routes/textRoutes";
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ class App {
         this.app.get("/", (req, res) => {
             res.json("Hello World!");
         });
+        this.app.use("/text", textRoutes);
     }
 }
 export default new App().app;
