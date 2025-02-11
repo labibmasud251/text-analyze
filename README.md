@@ -13,6 +13,7 @@ A RESTful API service that analyzes text content, providing statistics like word
 1. Clone the repository:
 
 git clone https://github.com/labibmasud251/text-analyze
+
 cd text-analyze
 
 2. Install dependencies:
@@ -31,7 +32,7 @@ DB_NAME=text_analyzer
 
 4. Set up the database:
 
-CREATE DATABASE = text_analyzer
+CREATE DATABASE text_analyzer
 
 ```bash
 # Run migrations
@@ -72,21 +73,12 @@ npm run dev
 
 The server will start on `http://localhost:3000` (or the port specified in your `.env` file).
 
-## Build
+## Production
 
-To build the project:
+To build and run in production:
 
 ```bash
-npm run build
+npm run start 
 ```
 
 The compiled files will be in the `dist` directory.
-
-## Production
-
-To run in production:
-
-```bash
-npm run build
-npm start
-```
