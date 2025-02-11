@@ -1,4 +1,7 @@
 import type { Knex } from 'knex';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 interface KnexConfig {
   [key: string]: Knex.Config;
@@ -15,9 +18,6 @@ const knexConfig: KnexConfig = {
     },
     migrations: {
       directory: './migrations',
-    },
-    seeds: {
-      directory: './seeds', 
     },
   },
 };
